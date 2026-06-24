@@ -1,7 +1,7 @@
 import mqtt from "mqtt";
 
 const BROKER_URL =
-  "wss://c644aec09d5a41f08bc71c8a328341d1.s1.eu.hivemq.cloud:8884/mqtt";
+  "wss://60ef76ad47684abaa6aa88c67aecced5.s1.eu.hivemq.cloud:8884/mqtt";
 
 let client = null;
 
@@ -10,8 +10,8 @@ export function getMqttClient() {
 
   client = mqtt.connect(BROKER_URL, {
     clientId: `swiftaid_${Math.random().toString(16).slice(2, 10)}`,
-    username: "paul_ajayi",
-    password: "Paul@2002",
+    username: "Victor01",
+    password: "Iamxmat1",
     clean: true,
     reconnectPeriod: 3000,
   });
@@ -23,3 +23,19 @@ export function getMqttClient() {
 
   return client;
 }
+
+// export function subsribeTopic(topic, callback) {
+//   const client = getMqttClient();
+//   client.on("message", (receivedTopic, message) => {
+//     if (receivedTopic === topic) {
+//       try {
+//         const data = JSON.parse(message.toString());
+//         console.log(data);
+//         callback(data);
+//       } catch (error) {
+//         console.error("Failed to parse to JSON:", error);
+//       }
+//     }
+//   });
+//   client.subscribe(topic);
+// }
