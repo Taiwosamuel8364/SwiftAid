@@ -4,7 +4,7 @@ import { calculateSeverity, getSeverityLevel } from "../utils/severityEngine";
 // const [sensorData, setSensorData] = useState(null);
 
 const client = getMqttClient();
-const TOPIC = "esp32/lab/sensors";
+const TOPIC = "esp32/lab/sensors/data";
 
 export default function HospitalDashboard() {
   const [patients, setPatients] = useState({});
